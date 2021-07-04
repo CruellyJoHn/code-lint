@@ -1,0 +1,38 @@
+{
+  "name": "code-format",
+  "version": "0.0.1",
+  "description": "code-format by eslint, commitlint, stylelint, prettier",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.0.0"
+  },
+  "husky": {
+    "hook": {
+      "pre-commit": "list-staged",
+      "commit-msg": "commitlint -E $HUSKY_GIT_PARAMS"
+    }
+  },
+  "list-staged": {
+    "*.{js,vue,ts,json}": [
+      "prettier --write"
+    ],
+    "*.{js,vue,ts}": [
+      "eslint --fix"
+    ],
+    "*.less": [
+      "stylelint --fix"
+    ],
+    "*.md": [
+      "markdownlint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
