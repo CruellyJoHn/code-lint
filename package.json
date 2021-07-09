@@ -7,15 +7,10 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^7.0.0",
+    "husky": "^7.0.1",
     "lint-staged": "^11.0.0"
   },
-  "husky": {
-    "hook": {
-      "pre-commit": "list-staged",
-      "commit-msg": "commitlint -E $HUSKY_GIT_PARAMS"
-    }
-  },
+
   "list-staged": {
     "*.{js,vue,ts,json}": [
       "prettier --write"
@@ -30,6 +25,7 @@
       "markdownlint --fix"
     ]
   },
+
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
