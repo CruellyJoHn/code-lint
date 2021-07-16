@@ -1,28 +1,38 @@
 {
-  "name": "code-format",
-  "version": "0.0.1",
-  "description": "code-format by eslint, commitlint, stylelint, prettier",
-  "license": "MIT",
-  "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
-    "@ls-lint/ls-lint": "^1.9.2",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.30.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-vue": "^7.13.0",
-    "husky": "^7.0.1",
-    "lint-staged": "^11.0.0",
-    "vue-eslint-parser": "^7.8.0"
-  },
-  "lint-staged": {
-    "*.{js,vue}": [
-      "eslint --fix --color"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  }
+	"name": "code-format",
+	"version": "0.0.1",
+	"description": "code-format by eslint, commitlint, stylelint, prettier",
+	"license": "MIT",
+	"scripts": {
+		"eslint": "eslint --ext .vue,.js ./src --color",
+		"eslint --fix": "eslint --ext .vue,.js ./src --color --fix"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^12.1.4",
+		"@commitlint/config-conventional": "^12.1.4",
+		"@ls-lint/ls-lint": "^1.9.2",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^7.30.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-import": "^2.23.4",
+		"eslint-plugin-prettier": "^3.4.0",
+		"eslint-plugin-vue": "^7.13.0",
+		"husky": "^7.0.1",
+		"lint-staged": "^11.0.0",
+		"prettier": "^2.3.2",
+		"vue-eslint-parser": "^7.8.0"
+	},
+	"lint-staged": {
+		"*.{js,vue,json}": [
+			"prettier --write"
+		],
+		"*.{js,vue}": [
+			"eslint --fix --color"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	}
 }

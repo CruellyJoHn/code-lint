@@ -1,11 +1,10 @@
 ls:
-  src/*:
-    .dir: kebabcase
-    .js: snakecase
-    .ts: snakecase
-    .vue: snakecase
-    .css: snakecase
-
+    src/*:
+        .dir: kebabcase
+        .js: snakecase
+        .ts: snakecase
+        .vue: snakecase
+        .css: snakecase
 # ignore:
 #   - node_modules
 #   - .git
