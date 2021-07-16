@@ -8,21 +8,16 @@
     "@commitlint/config-conventional": "^12.1.4",
     "@ls-lint/ls-lint": "^1.9.2",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.30.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-vue": "^7.13.0",
     "husky": "^7.0.1",
-    "lint-staged": "^11.0.0"
+    "lint-staged": "^11.0.0",
+    "vue-eslint-parser": "^7.8.0"
   },
-  "list-staged": {
-    "*.{js,vue,ts,json}": [
-      "prettier --write"
-    ],
-    "*.{js,vue,ts}": [
-      "eslint --fix"
-    ],
-    "*.less": [
-      "stylelint --fix"
-    ],
-    "*.md": [
-      "markdownlint --fix"
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix --color"
     ]
   },
   "config": {
