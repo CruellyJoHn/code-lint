@@ -10,6 +10,7 @@ module.exports = {
 
     // 用于传给解析器的配置
     parserOptions: {
+        parser: '@typescript-eslint/parser',
         ecmaVersion: 2020, // js的特性版本号
         sourceType: 'module' // 使用esm
     },
@@ -22,7 +23,7 @@ module.exports = {
     ],
 
     // 插件：使用该插件自定义的规则
-    plugins: ['vue', 'prettier'],
+    plugins: ['vue', 'prettier', '@typescript-eslint'],
 
     // 配置规则。没有配置则使用默认的
     // 以下是配置eslint和vue自带的部分规则
@@ -30,6 +31,10 @@ module.exports = {
     rules: {
         // prettier
         'prettier/prettier': ['error', { trailingComma: 'none' }],
+
+        // typescript
+        // 优先使用 interface 而不是 type
+        '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
 
         // eslint 自带规则
         'no-console': 'error',

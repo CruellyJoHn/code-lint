@@ -11,6 +11,8 @@
 		"@commitlint/cli": "^12.1.4",
 		"@commitlint/config-conventional": "^12.1.4",
 		"@ls-lint/ls-lint": "^1.9.2",
+		"@typescript-eslint/eslint-plugin": "^4.28.3",
+		"@typescript-eslint/parser": "^4.28.3",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^7.30.0",
 		"eslint-config-prettier": "^8.3.0",
@@ -22,13 +24,14 @@
 		"prettier": "^2.3.2",
 		"stylelint": "^13.13.1",
 		"stylelint-config-standard": "^22.0.0",
+		"typescript": "^4.3.5",
 		"vue-eslint-parser": "^7.8.0"
 	},
 	"lint-staged": {
-		"*.{js,vue,json}": [
+		"*.{ts,js,vue,json}": [
 			"prettier --write"
 		],
-		"*.{js,vue}": [
+		"*.{ts,js,vue}": [
 			"eslint --fix --color"
 		],
 		"*.{less,css}": [
